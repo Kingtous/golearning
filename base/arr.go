@@ -26,10 +26,21 @@ import (
 	"fmt"
 )
 
+func printArr(vals []interface{}) {
+	for idx, value := range vals {
+		fmt.Printf("%d: %s\n", idx, value)
+	}
+}
+
 func main() {
 	// 数组
 	fmt.Println("Example 1:")
-	var s []int // [] int {0,0,0}
+	s := []string{"a", "b", "c"}
 	fmt.Println("capacity:", cap(s))
-	return 1
+	s_interface := make([]interface{}, 3)
+	for i, v := range s {
+		s_interface[i] = v
+	}
+	printArr(s_interface)
+	return
 }
